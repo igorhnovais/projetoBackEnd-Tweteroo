@@ -13,7 +13,52 @@ const tweets = [
 		username: "bobesponja",
 		avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
 		tweet: "eu amo o hub"
-	}
+	},
+	{
+		username: "bobesponja",
+		avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
+		tweet: "eu amo o hub"
+	},
+	{
+		username: "bobesponja",
+		avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
+		tweet: "eu amo o hub"
+	},
+	{
+		username: "bobesponja",
+		avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
+		tweet: "eu amo o hub"
+	},
+	{
+		username: "bobesponja",
+		avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
+		tweet: "eu amo o hub"
+	},
+	{
+		username: "bobesponja",
+		avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
+		tweet: "eu amo o hub"
+	},
+	{
+		username: "bobesponja",
+		avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
+		tweet: "eu amo o hub"
+	},
+	{
+		username: "bobesponja",
+		avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
+		tweet: "eu amo o hub"
+	},
+	{
+		username: "bobesponja",
+		avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
+		tweet: "eu amo o hub"
+	},
+	{
+		username: "bobesponja",
+		avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
+		tweet: "eu amo o hub muitoo"
+	},
 ]
 
 app.post("/sign-up", (req, res) => {
@@ -42,15 +87,25 @@ app.post("/tweets", (req,res) => {
   		tweet
 	}
 
-	tweets.push(post);
-
+	tweets.unshift(post);
+	
 	res.send(tweets);
+	
 });
 
-
+ 
 app.get("/tweets", (req, res) => {
-    res.send(tweets);
+
+	let newTweets = [];
+
+	for(let i = 0; i < 10; i++){
+		arr.push(tweets[i]);
+	}
+
+	res.send(newTweets);
+	
 });
+
 
 app.listen(5000, () => {
     console.log("servidor ativo na porta 5000")
