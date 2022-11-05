@@ -1,6 +1,8 @@
 import express, { json } from "express";
 import cors from "cors";
 
+import { tweets } from "./tweets.js";
+
 const app = express();
 
 app.use(cors());
@@ -8,58 +10,7 @@ app.use(express.json());
 
 const signUp = [];
 
-const tweets = [
-	{
-		username: "bobesponja",
-		avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
-		tweet: "eu amo o hub"
-	},
-	{
-		username: "bobesponja",
-		avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
-		tweet: "eu amo o hub"
-	},
-	{
-		username: "bobesponja",
-		avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
-		tweet: "eu amo o hub"
-	},
-	{
-		username: "bobesponja",
-		avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
-		tweet: "eu amo o hub"
-	},
-	{
-		username: "bobesponja",
-		avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
-		tweet: "eu amo o hub"
-	},
-	{
-		username: "bobesponja",
-		avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
-		tweet: "eu amo o hub"
-	},
-	{
-		username: "bobesponja",
-		avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
-		tweet: "eu amo o hub"
-	},
-	{
-		username: "bobesponja",
-		avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
-		tweet: "eu amo o hub"
-	},
-	{
-		username: "bobesponja",
-		avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
-		tweet: "eu amo o hub"
-	},
-	{
-		username: "bobesponja",
-		avatar: "https://super.abril.com.br/wp-content/uploads/2020/09/04-09_gato_SITE.jpg?quality=70&strip=info",
-		tweet: "eu amo o hub muitoo"
-	},
-]
+
 
 app.post("/sign-up", (req, res) => {
 
@@ -72,7 +23,7 @@ app.post("/sign-up", (req, res) => {
 
 	signUp.push(user);
 
-	res.send(signUp);
+	res.send("OK");
 });
 
 
@@ -89,7 +40,7 @@ app.post("/tweets", (req,res) => {
 
 	tweets.unshift(post);
 	
-	res.send(tweets);
+	res.send("OK");
 	
 });
 
@@ -99,7 +50,7 @@ app.get("/tweets", (req, res) => {
 	let newTweets = [];
 
 	for(let i = 0; i < 10; i++){
-		arr.push(tweets[i]);
+		newTweets.push(tweets[i]);
 	}
 
 	res.send(newTweets);
