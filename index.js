@@ -21,14 +21,22 @@ app.post("/sign-up", (req, res) => {
 		avatar
 	};
 
+	if(!username || !avatar){
+		return res.status(400).send("Todos os campos são obrigatórios");
+	}
+
 	signUp.push(user);
 
-	res.send("OK");
+	res.status(201).send("OK, logado com sucesso!!");
 });
 
 
 app.post("/tweets", (req,res) => {
 	const {username, tweet} = req.body;
+
+	if(!username || !tweet){
+		return res.status(400).send("Todos os campos são obrigatórios")
+	}
 
 	let obj = signUp.find((item) => item.username === username);
 
@@ -40,7 +48,7 @@ app.post("/tweets", (req,res) => {
 
 	tweets.unshift(post);
 	
-	res.send("OK");
+	res.status(201).send("OK, você fez um tweet");
 	
 });
 
